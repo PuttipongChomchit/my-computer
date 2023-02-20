@@ -1,0 +1,11 @@
+<div class="container" style="padding-top: 60px;margin-top: 0px;width: 70%;">
+    <div class="page-header">
+        <table style="width: 100%;">
+            <tr>
+                <td *ngFor="let test of time ;let i = index;" style="border: 1px solid;">
+                    {{ConvertTime(time[test])}}
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>

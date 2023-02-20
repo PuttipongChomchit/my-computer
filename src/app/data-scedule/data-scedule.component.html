@@ -1,0 +1,59 @@
+<div class="container" style="padding-top: 60px;margin-top: 0px;width: 70%;">
+    <div class="page-header">
+        <div><h3><b>ตารางเวลา</b></h3><hr></div>
+        <table class="table table-striped table-bordered">
+            <thead>
+                <tr>
+                    <th>No#</th>
+                    <th>ประเภทกิจกรรม</th>
+                    <th>หมายเหตุ</th>
+                    <th>วันที่</th>
+                    <th>เวลาเริ่มต้น</th>
+                    <th>เวลาสิ้นสุด</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr align="center" style="font-size: 18px;">
+                    <td>
+                        
+                    </td>
+                    <td>
+                        <select name="type" [(ngModel)]="file.type" class="form-control" id="type" (change)="selectFile()">
+                            <option value="notify">
+                                แจ้งเตือน
+                            </option>
+                            <option value="activity">
+                                กิจกรรม
+                            </option>
+                        </select>
+                    </td>
+                    <td><input name="activity" [(ngModel)]="file.activity" type="text" class="form-control" id="note"placeholder="Activity"></td>
+                    <td>
+                        <input name="date" [(ngModel)]="file.date" type="text" class="form-control" id="datepiker" (focus)="datepiker()" >
+                        <app-datepiker [items]="stypeDate" (piker_date)="editDate($event)"></app-datepiker>
+                    </td>
+                    <td><input name="stime" [(ngModel)]="file.stime" type="time" class="form-control" id="stime"placeholder="Start Time" [disabled]="!disableStime"></td>
+                    <td><input name="etime" [(ngModel)]="file.etime" type="time" class="form-control" id="etime"placeholder="End Time" [disabled]="!disableEtime"></td>
+                    <td><input name="note" [(ngModel)]="file.note" type="text" class="form-control" id="note"placeholder="Note"></td>
+                    <td style="text-align: center">
+                        <button (click)='saveFileData()' type="button" class="btn btn-success">Save</button>
+                    </td>
+                </tr>
+            </tbody>
+            <tbody *ngFor="let file of fileUploads;let i = index;">
+                <tr align="center" style="font-size: 18px;">
+                    <td>{{i+1}}</td>
+                    <td>{{file.type}}</td>
+                    <td>{{file.activity}}</td>
+                    <td>{{timezoneTH(file.date) | date: 'dd/MM/yyyy'}}</td>
+                    <td>{{file.stime}}</td>
+                    <td>{{file.etime}}</td>
+                    <td>{{file.note}}</td>
+                    <td style="text-align: center">
+                        <button (click)='deleteFileUpload(file)' type="button" class="btn btn-danger">DEL</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

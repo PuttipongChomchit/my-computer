@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "risudream39": {
+      "hosting": {
+        "my-computer-server": [
+          "risudream39"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "risudream39"
+  }
+}

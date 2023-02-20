@@ -1,0 +1,9 @@
+<div style="background-color: whitesmoke;right: 0;bottom: -70px;" id="barSelectorColor" [style]="barSelectorColor" >
+    <div style="position: absolute;right: 15vw;top: 35vh;">
+        <i class="fa fa-chevron-left" style="font-size: 36px;display: none;" (click)="clickLeft()" [style]="barLeft"></i>
+        <i class="fa fa-chevron-right" style="font-size: 36px;" (click)="clickRight()" [style]="barRight"></i>
+    </div>
+    <div *ngFor="let file of items;let i = index;">
+        <a (click)="selectMenu(file.url)" >{{file.name}}</a>
+    </div>
+</div>

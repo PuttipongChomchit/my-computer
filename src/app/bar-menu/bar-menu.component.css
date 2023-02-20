@@ -1,0 +1,23 @@
+#barSelectorColor table{
+    width: 100%;
+}
+
+#barSelectorColor div{
+    text-align: center;
+}
+
+#barSelectorColor{
+    position: fixed;
+    width: 15vw;
+    height: 100%;
+    animation-fill-mode: forwards;
+    z-index: 9999;
+}
+
+@keyframes moveLeft {
+from {right : -15vw}to {right: 0vw;}
+}
+
+@keyframes moveRight {
+from {right: 0vw;}to {}
+}

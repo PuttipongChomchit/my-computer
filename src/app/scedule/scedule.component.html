@@ -1,0 +1,36 @@
+<div class="container" style="padding-top: 60px;margin-top: 0px;width: 70%;">
+    <div class="page-header">
+        <div><h3><b>ตารางเวลา</b></h3><hr></div>
+        <table class="table table-striped table-bordered">
+            <thead>
+                <tr>
+                    <th>No#</th>
+                    <th>ประเภทกิจกรรม</th>
+                    <th>กิจกรรม</th>
+                    <th>วันที่</th>
+                    <th>เหลือ</th>
+                    <th>เวลาเริ่มต้น</th>
+                    <th>เวลาสิ้นสุด</th>
+                    <th>หมายเหตุ</th>
+                </tr>
+            </thead>
+            <tbody *ngFor="let file of scedule;let i = index;">
+                <tr align="center" style="font-size: 18px;" [style]="dateStyle(file.date,file.type)">
+                    <td>{{i+1}}</td>
+                    <td>{{file.type}}</td>
+                    <td>{{file.activity}}</td>
+                    <td>{{dateToString(file.date,file,file.key)}}</td>
+                    <td>{{leftDate(file.date)}}</td>
+                    <td>{{file.stime}}</td>
+                    <td>{{file.etime}}</td>
+                    <td>{{file.note}}</td>
+                </tr>
+            </tbody>
+        </table>
+        <div>
+            <h3>เป้าหมาย : สิ่งที่ต้องทำไม่มีกำหนด แล้วกดปุ่มยืนยันว่าทำให้เสร็จแล้ว</h3><br>
+            <h3>กิจวัตร : สิ่งที่ทำทุกวัน จ อ พ พฤ ศ ส อ กำหมดเวลาเริ่มและสิ้นสุด</h3><br>
+            <h3>สร้างปุ่ม สำเร็จ</h3><br>
+        </div>
+    </div>
+</div>

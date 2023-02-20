@@ -1,0 +1,34 @@
+.footer {
+    margin-top: 30px;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: #dba698;
+    color: #8fb0b5;
+    text-align: center;
+    position: fixed;
+}
+nav{
+    /*background-color: skyblue;*/
+    background-color: #F09263;
+    height: 70px;
+}
+a{
+    font-size: x-large;  
+}
+li a{
+    opacity: 0.6;
+    transition: 0.3s;
+    color: #FBFBFB;
+}
+li a:hover{
+    color: #FBFFFF;
+    opacity: 1
+}
+li a:visited{
+    color: #FBFFFF;
+    opacity: 1
+}
+a b{
+    color: #FED55F;
+}

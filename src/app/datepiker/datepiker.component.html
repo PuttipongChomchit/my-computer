@@ -1,0 +1,41 @@
+<div class="xdsoft_datetimepicker xdsoft_noselect xdsoft_" style="position: absolute;" [style]="stypeDate">
+    <div class="xdsoft_datepicker active">
+        <div class="xdsoft_mounthpicker">
+            <button type="button" class="xdsoft_prev" style="visibility: visible;" (click)="prevMonth()" ></button>
+            <button type="button" class="xdsoft_today_button" style="visibility: visible;" (click)="dateToDay()"></button>
+            <div class="xdsoft_label xdsoft_month" (click)="monthFocus()" ><span>{{months[month]}}</span>
+                <div class="xdsoft_select xdsoft_monthselect xdsoft_scroller_box" [style]="stypeMonth" >
+                    <div [style]="scrollerBoxMonth">
+                        <div *ngFor="let month of months;let i = index;" (data-value)="i" [classList]="selectDate(i,'month')">{{month}}</div>
+                    </div>
+                    <div class="xdsoft_scrollbar">
+                        <div class="xdsoft_scroller" style="display: block; height: 10px; margin-top: 0px;"></div>
+                    </div>
+                </div><i></i>
+            </div>
+    <div class="xdsoft_label xdsoft_year" (click)="yearFocus()"><span>{{year+543}}</span>
+        <div class="xdsoft_select xdsoft_yearselect xdsoft_scroller_box" [style]="stypeYear">
+            <div [style]="scrollerBoxYear">
+                <div *ngFor="let year of years;let i = index;" [classList]="selectDate(i,'year')" (data-value)="year+543">{{year+543}}</div>
+            </div>
+            <div class="xdsoft_scrollbar">
+                <div class="xdsoft_scroller" style="display: block; height: 10px; margin-top: 5px;"></div>
+            </div>
+    </div>
+    <i></i>
+    </div>
+    <button type="button" class="xdsoft_next" style="visibility: visible;" (click)="nextMonth()"></button>
+    </div>
+    <div class="xdsoft_calendar">
+        <table><thead><tr><th>อา.</th><th>จ.</th><th>อ&shy;.</th><th>พ.</th><th>พฤ.</th><th>ศ.</th><th>ส.</th></tr></thead>
+            <tbody>
+                <tr *ngFor="let n of [0,1,2,3,4]">
+                    <td *ngFor="let date of getCalendar(n);let i = index;" [classList]="date.stype" title="" (click)="chengeDatepiker(date.year + '-' + date.month + '-' + date.date)">
+                        <div>{{date.date}}</div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+</div>
